@@ -1,0 +1,24 @@
+app:
+  restart: always
+  build: ./app
+  expose:
+    - "8000"
+  ports:
+    - "8000:8000"
+  volumes:
+    - /usr/src/app/static
+  env_file: .env
+  command: bash -c "cd /usr/src && python -m app.server"
+
+nginx:
+  restart: always
+  build: ./nginx/
+  ports:
+    - "80:80"
+  volumes:
+    - /www/static
+  volumes_from:
+    - app
+  links:
+    - app:app
+
