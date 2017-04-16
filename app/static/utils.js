@@ -34,16 +34,22 @@ function parse_graph(graphData) {
     graph.edgesDataset = new vis.DataSet(edges); // these come from WorldCup2014.js
     redrawAll();
 }
+function isNormalInteger(str) {
+    var n = Math.floor(Number(str));
+    return String(n) === str && n >= 0;
+}
 function searchStory(story_id) {
-    NProgress.configure({
-        showSpinner: false
-    });
-    show("loadBlock");
-    hidden('jsonSideBar')
-    NProgress.start();
-    jQuery.getJSON("/story/" + story_id, function (graphData) {
-        parse_graph(graphData);
-    });
+    if (story_id !== "" && isNormalInteger(story_id)) {
+        NProgress.configure({
+            showSpinner: false
+        });
+        show("loadBlock");
+        hidden('jsonSideBar')
+        NProgress.start();
+        jQuery.getJSON("/story/" + story_id, function (graphData) {
+            parse_graph(graphData);
+        });
+    }
 }
 
 function initGraph(storyType) {

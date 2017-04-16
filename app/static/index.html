@@ -79,7 +79,8 @@
         <section id="answer4">
             <p>
                 Feel free to read my blog-post about building this site: <br>
-                <a href="http://www.stopsweats.org">Building HN Visualisation - using Sanic(Python asyncio) and vis.js
+                <a href="http://www.stopsweats.org">Building HN Visualisation - using Sanic(Python asyncio) and
+                    vis.js
                 </a>
             </p>
         </section>
@@ -113,50 +114,55 @@
         </div>
     </div>
 </div>
-<header>
-    <nav>
-        <div class="flex-container">
+<div class="main-body">
 
-            <img id="logo" src="static/logo.jpg" alt="help"
-                 alt="Site Logo" onclick="show('popup2')">
+    <header>
+        <nav id="navContainer" class="flex-container">
 
+            <a href="https://etlsh.com">
+                <img id="logo" src="static/logo.jpg"
+                     alt="Site Logo">
+            </a>
             <div class="flex-item" id="links">
                 <ul>
-                    <li><a href="/static/http://127.0.0.1:8000/hot">Blog</a></li>
-                    <li><a href="/static/#">Github</a></li>
+                    <li><a href="https://etlsh.com">Blog</a></li>
+                    <li><a href="https://github.com/itielshwartz/Hackernews-visualization">Github</a></li>
                     <li><a href="https://news.ycombinator.com/">Hackernews</a></li>
                 </ul>
             </div>
-            <div class="flex-item" id="big"><h5 class="elegant">Hackernews visualization</h5></div>
-            <div class="flex-container" id="story-search">
+            <h5 class="flex-item">Hackernews visualization</h5>
+            <div class="flex-container" id="story-search-container">
                 <form>
                     <input type="button" id="new-button" class="story-type" value="New"
                            onclick="initGraph('new');">
                     <input type="button" id="hot-button" class="story-type" value="Top"
-                           onclick="initGraph('hot');" autofocus>
+                           onclick="initGraph('hot');">
                     <input type="button" id="best-button" class="story-type" value="Best"
                            onclick="initGraph('best');">
                     <input type="search" placeholder="Enter story id" id="story-search-box" name="valueId"
-                           class="story-type" required>
+                           class="story-type">
                     <input type="button" id="story-search-button" value="Visualize" class="story-type"
-                           onclick="searchStory(this.form.valueId.value);">
+                           onclick="searchStory(this.form.valueId.value)"
+                    >
                 </form>
             </div>
             <img id="infoLogo" src="static/info_logo.png" alt="help"
                  alt="Site Logo" onclick="show('popup2')">
-        </div>
-    </nav>
-</header>
-<div class="flexbox-container" id="mainSection">
-    <div id="mynetwork"></div>
-    <div id="jsonSideBar"></div>
-</div>
-<div class="loading" id="loadingBar"></div>
 
-<div class="popup" id="loadBlock"></div>
-<script src="static/popup.js"></script>
-<script src="static/configs.js"></script>
-<script src="static/utils.js"></script>
-<script src="static/network.js"></script>
+        </nav>
+    </header>
+
+    <div class="flexbox-container" id="mainSection">
+        <div id="mynetwork"></div>
+        <div id="jsonSideBar"></div>
+    </div>
+    <div class="loading" id="loadingBar"></div>
+
+    <div class="popup" id="loadBlock"></div>
+    <script src="static/popup.js"></script>
+    <script src="static/configs.js"></script>
+    <script src="static/utils.js"></script>
+    <script src="static/network.js"></script>
+</div>
 </body>
 </html>

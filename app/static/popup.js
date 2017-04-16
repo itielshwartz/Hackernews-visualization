@@ -27,3 +27,25 @@ $(document).click(function (event) {
     }
 
 })
+
+
+$(document).keyup(function (e) {
+    if (e.keyCode == 27 && document.getElementById('popup2').style.display == 'block') { // escape key maps to keycode `27`
+        hide('popup2')
+    }
+});
+
+$('.story-type').click(function () {
+    if (this.id !== "story-search-box") {
+        $('.story-type').removeClass('active');
+        $(this).addClass('active');
+        console.log(this);
+    }
+});
+
+$('.story-type').keypress(function (e) {
+    if (e.which == 13) {
+        e.preventDefault();
+        $("#story-search-button").click();
+    }
+});

@@ -26,6 +26,27 @@ html, body {
     justify-content: flex-end;
 }
 
+#navContainer {
+    flex: 1;
+}
+
+#mainSection {
+    flex: 15;
+}
+
+.main-body {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
 .flexbox-container {
     display: flex;
     width: 100%;
@@ -95,19 +116,17 @@ header {
     flex: 1.1;
 }
 
-#big {
-    flex: 1.5 1 auto;
-}
+h5 {
 
-h5.elegant {
-    letter-spacing: -2px;
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
     text-transform: none;
     font-size: 36px;
     color: #000;
-    padding-left: 160px;
+    text-align: right;
     margin-top: -1px;
+    flex: 1.5 1 auto;
+
 }
 
 #story-search-box {
@@ -119,8 +138,8 @@ h5.elegant {
 
 }
 
-#story-search {
-    flex: 2;
+#story-search-container {
+    flex: 1.5;
     display: flex;
     margin: 10px;
 }
@@ -184,6 +203,7 @@ input[type="search"]:focus {
     outline: none;
     border: 1px solid #27ae60;
     box-shadow: 0 0 2px #27ae60;
+    background-color: #c2cde6;
 }
 
 input[type="button"] {
@@ -200,6 +220,10 @@ input[type="button"]:focus {
     cursor: pointer;
     background-color: #10715e;
     outline: none;
+}
+
+input.active {
+    background-color: #10715e;
 }
 
 /* ----------------------------- */
