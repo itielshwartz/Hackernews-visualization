@@ -7,7 +7,6 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Roboto, Arial, Sans-serif;
-    font-size: 16px;
     color: #2c3e50;
     background-color: #f9fefd;
     overflow: hidden;
@@ -22,42 +21,41 @@ html, body {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row wrap;
-    justify-content: flex-end;
-}
 
-#navContainer {
-    flex: 1;
 }
 
 #mainSection {
-    flex: 15;
+    flex-basis: auto; /* default value */
+    flex-grow: 10;
+    display: flex;
+
+}
+
+#headerFlex {
+    flex-basis: auto; /* default value */
+    flex-grow: 1;
+    display: flex;
+
 }
 
 .main-body {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
-    -webkit-flex-flow: row wrap;
-    justify-content: flex-end;
+    flex-direction: column;
+
 }
 
-.flexbox-container {
+.body-container {
     display: flex;
     width: 100%;
-    margin-top: 61px;
     overflow: hidden;
 }
 
 #jsonSideBar {
     overflow: auto;
     padding: .5rem;
-    height: 100%;
     border-color: white;
     border-width: 10px;
     background-color: #41535b;
@@ -70,23 +68,18 @@ html, body {
 
 #mynetwork {
     padding: 1%;
-    height: 90%;
     width: 100%;
 }
 
 .flex-item {
-    flex-grow: 1;
-    flex-basis: fit-content;
-    width: 200px;
-    height: 50px;
-    margin: 10px;
+    flex: 1 1 auto;
+    display: flex;
+    margin-top: 0.5em;
 }
 
 header {
     top: 0;
     width: 100%;
-    height: 60px;
-    position: fixed;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -99,37 +92,27 @@ header {
     display: inline-block;
 }
 
-#infoLogo {
+.logoDiv {
     cursor: pointer;
-    height: 50px;
+    height: 3em;
     width: auto;
-    margin: 5px;
     display: inline-block;
-    flex: 0.2;
+    flex: 0.1;
 }
 
 /* ----------------------------- */
-/* NAV */
+/* header  */
 /* ----------------------------- */
-
-#links {
-    flex: 1.1;
-}
 
 h5 {
 
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
     text-transform: none;
-    font-size: 36px;
+    font-size: 2.2rem;
     color: #000;
     text-align: right;
     margin-top: -1px;
-    flex: 1.5 1 auto;
-
-}
-
-#story-search-box {
 
 }
 
@@ -139,54 +122,54 @@ h5 {
 }
 
 #story-search-container {
-    flex: 1.5;
+    flex-basis: auto; /* default value */
+    flex-grow: 1;
     display: flex;
-    margin: 10px;
 }
 
 .story-type {
     flex-grow: 1;
     flex-basis: 0;
-    margin: 10px;
+    margin: 0.5em;
 }
 
 #hot-button {
 
 }
 
-nav ul {
+header ul {
     padding: 0;
     margin: 0;
     list-style: none;
+    display: flex;
 }
 
-nav ul li {
+header ul li {
     display: inline-block;
-    margin-right: 15px;
-    margin-top: 10px;
+    margin-right: 1.1em;
+    margin-top: 1em;
 }
 
-nav li a#active-page {
+header li a#active-page {
     border-bottom: 3px solid #27ae60;
 }
 
-/* Nav Link Styles */
-nav li a:link,
-nav li a:visited {
+/* header  Link Styles */
+header li a:link,
+header li a:visited {
     color: #2c3e50;
     text-decoration: none;
     border-bottom: 3px solid transparent;
     transition: border-bottom 0.2s;
 }
 
-nav li a:hover,
-nav li a:active {
+header li a:hover,
+header li a:active {
     border-bottom: 3px solid #27ae60;
 }
 
 input[type="search"] {
     height: 2em;
-    max-width: 120px;
     margin-right: 2px;
     padding: 1em .5em 1.2em 1em;
     border: 1px solid #d6d6d6;
@@ -211,7 +194,7 @@ input[type="button"] {
     border: 1px solid #27ae60;
     border-radius: 5px;
     color: #000;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     font-family: 'Alegreya Sans', sans-serif;
 }
 
@@ -233,8 +216,10 @@ input.active {
 .json-formatter-dark.json-formatter-row .json-formatter-string {
     white-space: pre-wrap;
     color: #ffb7b7;
+    font-size: 1rem;
 }
 
 #nprogress .bar {
     height: 5px;
 }
+

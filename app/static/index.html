@@ -114,12 +114,11 @@
         </div>
     </div>
 </div>
+
 <div class="main-body">
-
-    <header>
-        <nav id="navContainer" class="flex-container">
-
-            <a href="https://etlsh.com">
+    <div id="headerFlex">
+        <header id="navContainer" class="flex-container">
+            <a href="https://etlsh.com" class="logoDiv">
                 <img id="logo" src="static/logo.jpg"
                      alt="Site Logo">
             </a>
@@ -130,9 +129,11 @@
                     <li><a href="https://news.ycombinator.com/">Hackernews</a></li>
                 </ul>
             </div>
-            <h5 class="flex-item">Hackernews visualization</h5>
+            <div class="flex-item">
+                <h5>Hackernews visualization</h5>
+            </div>
             <div class="flex-container" id="story-search-container">
-                <form>
+                <form class="flex-item">
                     <input type="button" id="new-button" class="story-type" value="New"
                            onclick="initGraph('new');">
                     <input type="button" id="hot-button" class="story-type" value="Top"
@@ -145,24 +146,25 @@
                            onclick="searchStory(this.form.valueId.value)"
                     >
                 </form>
+
             </div>
-            <img id="infoLogo" src="static/info_logo.png" alt="help"
+            <img class="logoDiv" src="static/info_logo.png" alt="help"
                  alt="Site Logo" onclick="show('popup2')">
 
-        </nav>
-    </header>
-
-    <div class="flexbox-container" id="mainSection">
+        </header>
+    </div>
+    <div class="body-container" id="mainSection">
         <div id="mynetwork"></div>
         <div id="jsonSideBar"></div>
     </div>
     <div class="loading" id="loadingBar"></div>
 
     <div class="popup" id="loadBlock"></div>
-    <script src="static/popup.js"></script>
-    <script src="static/configs.js"></script>
-    <script src="static/utils.js"></script>
-    <script src="static/network.js"></script>
+
 </div>
+<script src="static/popup.js"></script>
+<script src="static/configs.js"></script>
+<script src="static/utils.js"></script>
+<script src="static/network.js"></script>
 </body>
 </html>
