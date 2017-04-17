@@ -9,6 +9,7 @@ var hide = function (id) {
     if (id == 'popup2' && firstLoad) {
         $("#new-button").click();
         $("#new-button").focus();
+        document.getElementsByClassName('main-body')[0].style.display = 'flex';
         firstLoad = false;
 
     }

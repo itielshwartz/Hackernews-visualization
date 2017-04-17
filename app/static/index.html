@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cormorant" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link href='static/fonts.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -129,26 +129,24 @@
                     <li><a href="https://news.ycombinator.com/">Hackernews</a></li>
                 </ul>
             </div>
-            <div class="flex-item">
-                <h5>Hackernews visualization</h5>
+            <div class="flex-item" id="mainText">
+                <h5>HN Visualization</h5>
             </div>
-            <div class="flex-container" id="story-search-container">
-                <form class="flex-item">
-                    <input type="button" id="new-button" class="story-type" value="New"
-                           onclick="initGraph('new');">
-                    <input type="button" id="hot-button" class="story-type" value="Top"
-                           onclick="initGraph('hot');">
-                    <input type="button" id="best-button" class="story-type" value="Best"
-                           onclick="initGraph('best');">
-                    <input type="search" placeholder="Enter story id" id="story-search-box" name="valueId"
-                           class="story-type">
-                    <input type="button" id="story-search-button" value="Visualize" class="story-type"
-                           onclick="searchStory(this.form.valueId.value)"
-                    >
-                </form>
+            <form class="flex-item">
+                <input type="button" id="new-button" class="story-type" value="New"
+                       onclick="initGraph('new');">
+                <input type="button" id="hot-button" class="story-type" value="Top"
+                       onclick="initGraph('hot');">
+                <input type="button" id="best-button" class="story-type" value="Best"
+                       onclick="initGraph('best');">
+                <input type="search" placeholder="Enter story id" id="story-search-box" name="valueId"
+                       class="story-type">
+                <input type="button" id="story-search-button" value="Visualize" class="story-type"
+                       onclick="searchStory(this.form.valueId.value)"
+                >
+            </form>
 
-            </div>
-            <img class="logoDiv" src="static/info_logo.png" alt="help"
+            <img class="logoDiv" src="static/info_logo.png" id="helpLogo"
                  alt="Site Logo" onclick="show('popup2')">
 
         </header>
